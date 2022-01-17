@@ -1,0 +1,13 @@
+{
+  "jobs":[
+    {
+      "id":1,
+    "companyName":"Paytm",
+    "jobTitle":"Software-Developer",
+    "salary":50000,
+    "description":"a job in the it sector",
+    "location":"Delhi"
+    }
+
+  ]
+}
