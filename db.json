@@ -1,13 +1,29 @@
 {
-  "jobs":[
+  "jobs": [
     {
-      "id":1,
-    "companyName":"Paytm",
-    "jobTitle":"Software-Developer",
-    "salary":50000,
-    "description":"a job in the it sector",
-    "location":"Delhi"
+      "id": 1,
+      "companyName": "Paytm",
+      "jobTitle": "Software-Developer",
+      "salary": 50000,
+      "description": "a job in the it sector",
+      "location": "Delhi"
+    },
+    {
+      "id": 2,
+      "companyName": "ola",
+      "jobTitle": "Software-Developer",
+      "salary": 70000,
+      "description": "a job in the it sector",
+      "location": "Delhi"
+    },
+    {
+      "id": 3,
+      "companyName": "swiggy",
+      "jobTitle": "Software-Developer",
+      "salary": 70000,
+      "description": "a job in the it sector",
+      "location": "Bihar"
     }
-
   ]
+  
 }

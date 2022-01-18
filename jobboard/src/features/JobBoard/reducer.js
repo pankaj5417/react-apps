@@ -1,44 +1,129 @@
-import { ADD_JOB,
-    ADD_JOB_LOADING ,
-    ADD_JOB_SUCCESS,
-    ADD_JOB_ERROR,
-    GET_JOB_LOADING,
-    GET_JOB_SUCCESS
-} from "./actionType";
+import {
+    ADD_TODO,
+    ADD_TODO_ERROR,
+    ADD_TODO_LOADING,
+    ADD_TODO_SUCCESS,
+    GET_TODO_ERROR,
+    GET_TODO_LOADING,
+    GET_TODO_SUCCESS,
+    GET_TODO_SUCCESS_JOB,
 
-const init={loading:false, jobs:[],error:false}
+    REMOVE_TODO
+} from "./actionType"
 
-export const reducer=(state=init, {type, payload})=>{
+const init= {loading:false, todos:[], error:false, counter:0 };
+
+
+
+export const reducer= (state= init, { type, payload})=>{
     switch(type){
-        case ADD_JOB:
+        case ADD_TODO:
             return {
                 ...state,
-                jobs:[...state.jobs, payload]
+                todos: [...state.todos, payload]
             }
-            case ADD_JOB_LOADING:
+            case ADD_TODO_LOADING:
                 return {
                     ...state,
-                    loading:true
-                }
-                case ADD_JOB_SUCCESS:
-                    return {
-                        ...state,
-                        jobs:[...state.jobs, payload],
-                        loading:false
-                    }
-                    case ADD_JOB_ERROR:
-                        return {
-                            ...state,
-                            loading:false,
-                            error:payload
-                        }
-                        case GET_JOB_SUCCESS:
-                            return {
-                                ...state,
-                                jobs:payload,
-                                loading:false
+                    loading: true,
 
-                            }
-            default: return state;
+                }
+                case ADD_TODO_SUCCESS:
+                return {
+                    ...state,
+                    todos:payload,
+                    loading: false,
+
+                }
+                case ADD_TODO_ERROR:
+                return {
+                    ...state,
+                    loading: false,
+                    error:payload
+
+                }
+              case GET_TODO_SUCCESS:
+                  return {
+                      ...state,
+                      todos:payload,
+                      // todos: payload,
+                        loading:false
+                  }  
+                  case GET_TODO_LOADING:
+                      return {
+                          ...state,
+                          loading:true
+                      }
+                  case GET_TODO_ERROR:
+                      return {
+                          ...state,
+                          loading:false,
+                          error: true
+                      }
+                      case REMOVE_TODO:
+                          return {}
+
+            default:return state;
     }
 }
+const initialState= {loading:false, jobBoard:[], error:false, counter:0 };
+
+export const reducer2= (state=initialState, { type, payload})=>{
+    switch(type){
+        case ADD_TODO:
+            return {
+                ...state,
+                todos: [...state.todos, payload]
+            }
+            case ADD_TODO_LOADING:
+                return {
+                    ...state,
+                    loading: true,
+
+                }
+                case ADD_TODO_SUCCESS:
+                return {
+                    ...state,
+                    jobBoard:payload,
+                    loading: false,
+
+                }
+                case ADD_TODO_ERROR:
+                return {
+                    ...state,
+                    loading: false,
+                    error:payload
+
+                }
+                case GET_TODO_SUCCESS:
+                  return {
+                      ...state,
+                      jobBoard:payload,
+                      // todos: payload,
+                        loading:false
+                  }  
+              case GET_TODO_SUCCESS_JOB:
+                  return {
+                    ...state,
+                    ...payload,
+                    loading: false,
+                  }  
+                  case GET_TODO_LOADING:
+                      return {
+                          ...state,
+                          loading:true
+                      }
+                  case GET_TODO_ERROR:
+                      return {
+                          ...state,
+                          loading:false,
+                          error: true
+                      }
+                      case REMOVE_TODO:
+                          return {}
+
+            default:return state;
+    }
+}
+
+

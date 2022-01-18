@@ -1,0 +1,31 @@
+.jobs{
+    text-align: center;
+}
+.job-container{
+    width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.job-header{
+
+}
+table {
+    border: 2px solid forestgreen;
+    width: 800px;
+    height: 200px;
+  }
+    
+  th {
+    border-bottom: 1px solid black;
+  }
+  tr{
+      margin-top: 20px;
+  }
+    
+  td {
+    text-align: center;
+    margin-left: 40px;
+
+  }

@@ -1,19 +1,22 @@
-import React from 'react';
 import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
 import './App.css';
-import { Job } from './components/Job';
-//import { Navbar } from './components/Navbar';
-//import { Route, Routes } from 'react-router-dom';
-import { Home } from './components/Home';
-//import { JobDetail } from './components/JobDetail';
-//import { Naukri } from './components/Jobs';
+import {useDispatch, useSelector} from "react-redux"
+import { JobBoard, } from './components/JobBoard';
+import { Counter } from './components/Counter';
+import { Route, Routes } from 'react-router-dom';
+import JobDetails from './components/JobDetail';
+
 
 function App() {
+  
   return (
     <div className="App">
-     <Job /> 
      
+      <Routes>
+       <Route path="/" element={<JobBoard />}></Route>
+       <Route path="/jobs/:jobId" element={<JobDetails />}></Route>
+
+     </Routes>
     </div>
   );
 }
